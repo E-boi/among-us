@@ -1,0 +1,7 @@
+{
+	"name": "Blur NSFW",
+	"version": "1.1.1",
+	"description": "Blur images/videos in NSFW channels until you hover over them.",
+	"author": "ugly-patootie#0611",
+	"license": "MIT"
+}
