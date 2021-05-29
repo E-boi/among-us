@@ -1,17 +1,17 @@
 const { Plugin } = require('powercord/entities');
-const audio = new Audio('https://raw.githubusercontent.com/E-boi/among-us/main/sussy.mp3');
+window.sus = new Audio('https://raw.githubusercontent.com/E-boi/among-us/main/sussy.mp3');
 const Settings = require('./Settings');
 
 module.exports = class AmongUs extends Plugin {
 	updateVolume() {
-		audio.volume = this.settings.get('volume', 1);
+		window.sus.volume = this.settings.get('volume', 1);
 	}
 
 	startPlugin() {
-		audio.pause();
-		audio.loop = true;
-		audio.volume = this.settings.get('volume', 1);
-		audio.play();
+		window.sus.pause();
+		window.sus.loop = true;
+		window.sus.volume = this.settings.get('volume', 1);
+		window.sus.play();
 		powercord.api.settings.registerSettings(this.entityID, {
 			category: this.entityID,
 			label: 'Among us',
@@ -20,7 +20,7 @@ module.exports = class AmongUs extends Plugin {
 	}
 
 	pluginWillUnload() {
-		audio.pause();
+		window.sus.pause();
 		powercord.api.settings.unregisterSettings(this.entityID);
 	}
 };
